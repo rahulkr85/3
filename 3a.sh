@@ -1,10 +1,10 @@
-# !/bin/bash
-echo "enter directory name"
-read dir
-if [ -d $dir ]
+#!/bin/bash
+for i in $*
+do
+if [ -d $i ]
 then
-echo "list of files in the directory"
-ls –l $dir|egrep ‘^-’
+cmd=$(ls -Rl $1 | grep "^-" | tr -s ' ' | cut –d ' ' -f 5 | sort –n | t>echo “The largest file size is $cmd”
 else
-echo "enter proper directory name"
+echo "not directory"
 fi
+done
